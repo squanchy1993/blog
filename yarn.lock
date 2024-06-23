@@ -3616,6 +3616,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"alova@npm:^2.21.3":
+  version: 2.21.3
+  resolution: "alova@npm:2.21.3"
+  checksum: 9606088d67d627341855b47d6bdeddf6afa731befdc863389b6bb2a8426f534c32a9e03c370a9fed40b66d06b7a3e6bf996c5ad349f035d1d75de2643a2da073
+  languageName: node
+  linkType: hard
+
 "ansi-escapes@npm:^5.0.0":
   version: 5.0.0
   resolution: "ansi-escapes@npm:5.0.0"
@@ -10907,6 +10914,7 @@ __metadata:
     "@types/react": ^18.2.73
     "@typescript-eslint/eslint-plugin": ^6.1.0
     "@typescript-eslint/parser": ^6.1.0
+    alova: ^2.21.3
     autoprefixer: ^10.4.13
     contentlayer2: 0.4.6
     cross-env: ^7.0.3

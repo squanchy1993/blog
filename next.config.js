@@ -89,5 +89,9 @@ module.exports = () => {
 
       return config
     },
+    // 配置接口跨域
+    publicRuntimeConfig: {
+      apiKey: 'api',
+    },
   })
 }
