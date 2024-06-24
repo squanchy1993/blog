@@ -21,7 +21,7 @@ export default async function ArticleTable({ title, tagId, page = '1' }: TablePa
 
   const {
     data: { list, pageData: { pageCount } },
-  } = await alovaInstance.Get(`http://localhost:3000/article/page`, {
+  } = await alovaInstance.Get(`https://nestjs.zsjs.fun/article/page`, {
     params: parmas,
     localCache: 1000,
   })

@@ -21,22 +21,11 @@ export default function BlogPage({
     tagId?: string
   }
 }) {
-  const posts = allCoreContent(sortPosts(allBlogs))
-  const pageNumber = 1
-  const initialDisplayPosts = posts.slice(
-    POSTS_PER_PAGE * (pageNumber - 1),
-    POSTS_PER_PAGE * pageNumber
-  )
-  const pagination = {
-    currentPage: pageNumber,
-    totalPages: Math.ceil(posts.length / POSTS_PER_PAGE),
-  }
-
   return (
     <div>
       <div className="pb-6 pt-6">
         <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:hidden sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-          {'asdf'}
+          {'Blog'}
         </h1>
       </div>
       <div className="flex sm:space-x-24">
@@ -46,7 +35,7 @@ export default function BlogPage({
           </div>
         </div>
         <div className="flex-1">
-          <Suspense key={JSON.stringify(searchParams)} fallback={<PostArticleSkeleton/>}>
+          <Suspense key={JSON.stringify(searchParams)} fallback={<PostArticleSkeleton />}>
             <ArticleTable
               page={searchParams?.page}
               tagId={searchParams?.tagId}

@@ -15,9 +15,9 @@ export default function SideBar() {
   const { replace } = useRouter()
   const pathname = usePathname()
 
-  const [results, setResults] = useState<Tag[]>([])
+  const [tagList, setTagList] = useState<Tag[]>([])
 
-  const handleClick = (t) => {
+  const handleClick = (t?: Tag) => {
     console.log(`Searching... ${t}`)
 
     const params = new URLSearchParams(searchParams)
@@ -33,18 +33,33 @@ export default function SideBar() {
 
   useEffect(() => {
     alovaInstance
-      .Get(`http://localhost:3000/article-tag`, {
+      .Get(`https://nestjs.zsjs.fun/article-tag`, {
         localCache: 1000,
       })
       .then((res) => {
-        setResults(res.data as Tag[])
+        setTagList(res.data as Tag[])
       })
   }, [])
+  console.log('searchParams.get(tagId)', searchParams.get('tagId'))
 
   return (
     <div className="relative flex flex-1 flex-shrink-0">
       <div>
-        {results.map((t) => {
+        <div
+          role="button"
+          key={'allPostTag'}
+          tabIndex={0}
+          className="my-3"
+          onClick={() => handleClick()}
+          onKeyPress={() => handleClick()}
+        >
+          <h3
+            className={`px-3 py-2 text-sm font-medium uppercase text-gray-500 hover:text-primary-500  ${!searchParams.get('tagId') ? 'text-primary-500' : 'dark:text-gray-300'}`}
+          >
+            {` All post`}
+          </h3>
+        </div>
+        {tagList.map((t) => {
           return (
             <div
               role="button"

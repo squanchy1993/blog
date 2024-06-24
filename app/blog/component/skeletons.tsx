@@ -210,29 +210,34 @@ export function InvoicesTableSkeleton() {
 
 export function PostArticleSkeleton() {
   return (
-    <li className="py-5">
+    <div className="py-5">
       <article className="flex flex-col space-y-2 xl:space-y-0">
         <dl>
           <dt className="sr-only">Published on</dt>
-          <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400 mb-3">
+          <dd className="mb-3 text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
             <time className="bg-gray-100 text-[transparent]">August 5, 2023</time>
           </dd>
         </dl>
         <div className="space-y-3">
           <div>
-            <h2 className="text-2xl font-bold leading-8 tracking-tight text-[transparent] bg-gray-100">
+            <h2 className="bg-gray-100 text-2xl font-bold leading-8 tracking-tight text-[transparent]">
               placeholder
             </h2>
-            <div className="flex flex-wrap mt-3">
-              <a className="mr-3 text-sm font-medium uppercase text-[transparent] bg-gray-100" >placeholder</a>
-              <a className="mr-3 text-sm font-medium uppercase text-[transparent] bg-gray-100" >placeholder</a>
-              <a className="mr-3 text-sm font-medium uppercase text-[transparent] bg-gray-100" >placeholder</a>
+            <div className="mt-3 flex flex-wrap">
+              <a className="mr-3 bg-gray-100 text-sm font-medium uppercase text-[transparent]">
+                placeholder
+              </a>
+              <a className="mr-3 bg-gray-100 text-sm font-medium uppercase text-[transparent]">
+                placeholder
+              </a>
+              <a className="mr-3 bg-gray-100 text-sm font-medium uppercase text-[transparent]">
+                placeholder
+              </a>
             </div>
           </div>
-          <div className="prose h-[300px] max-w-none text-gray-500 dark:text-gray-400 bg-gray-100">
-          </div>
+          <div className="prose h-[300px] max-w-none bg-gray-100 text-gray-500 dark:text-gray-400"></div>
         </div>
       </article>
-    </li>
+    </div>
   )
 }
