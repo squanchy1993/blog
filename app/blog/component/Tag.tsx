@@ -1,9 +1,7 @@
 import Link from 'next/link'
-interface Props {
-  data: object
-}
 
-const Tag = ({ data }: Props) => {
+import { TagModel } from 'types/index.types'
+const Tag = ({ data }: { data: TagModel }) => {
   return (
     <Link
       href={`/tags/`}

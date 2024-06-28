@@ -3,28 +3,23 @@
 import { alovaInstance } from 'http/index'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
-
-type Tag = {
-  id: number
-  name: string
-  _count: { articles: number }
-}
+import { TagModel } from 'types/index.types'
 
 export default function SideBar() {
   const searchParams = useSearchParams()
   const { replace } = useRouter()
   const pathname = usePathname()
 
-  const [tagList, setTagList] = useState<Tag[]>([])
+  const [tagList, setTagList] = useState<TagModel[]>([])
 
-  const handleClick = (t?: Tag) => {
+  const handleClick = (t?: TagModel) => {
     console.log(`Searching... ${t}`)
 
     const params = new URLSearchParams(searchParams)
 
     params.set('page', '1')
     if (t) {
-      params.set('tagId', t.id)
+      params.set('tagId', t.id.toString())
     } else {
       params.delete('tagId')
     }
@@ -33,11 +28,11 @@ export default function SideBar() {
 
   useEffect(() => {
     alovaInstance
-      .Get(`https://nestjs.zsjs.fun/article-tag`, {
+      .Get<{ data: TagModel[] }>(`https://nestjs.zsjs.fun/article-tag`, {
         localCache: 1000,
       })
       .then((res) => {
-        setTagList(res.data as Tag[])
+        setTagList(res.data)
       })
   }, [])
   console.log('searchParams.get(tagId)', searchParams.get('tagId'))

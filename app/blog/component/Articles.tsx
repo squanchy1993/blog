@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Tag from './Tag'
 import { formatDate } from 'pliny/utils/formatDate'
 import Pagination from './Pagination'
+import { ArticleModel } from 'types/index.types'
 
 type TableParams = { title?: string; tagId?: string; page?: string }
 
@@ -24,7 +25,7 @@ export default async function ArticleTable({ title, tagId, page = '1' }: TablePa
       list,
       pageData: { pageCount },
     },
-  } = await alovaInstance.Get<{ data: { list: object[]; pageData: { pageCount: number } } }>(
+  } = await alovaInstance.Get<{ data: { list: ArticleModel[]; pageData: { pageCount: number } } }>(
     `https://nestjs.zsjs.fun/article/page`,
     {
       params: parmas,
