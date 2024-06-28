@@ -20,12 +20,17 @@ export default async function ArticleTable({ title, tagId, page = '1' }: TablePa
   }
 
   const {
-    data: { list, pageData: { pageCount } },
-  } = await alovaInstance.Get(`https://nestjs.zsjs.fun/article/page`, {
-    params: parmas,
-    localCache: 1000,
-  })
-
+    data: {
+      list,
+      pageData: { pageCount },
+    },
+  } = await alovaInstance.Get<{ data: { list: object[]; pageData: { pageCount: number } } }>(
+    `https://nestjs.zsjs.fun/article/page`,
+    {
+      params: parmas,
+      localCache: 1000,
+    }
+  )
 
   return (
     <div className="flex flex-col">
