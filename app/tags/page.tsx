@@ -4,13 +4,17 @@ import { slug } from 'github-slugger'
 import tagData from 'app/tag-data.json'
 import { genPageMetadata } from 'app/seo'
 import { alovaInstance } from 'http/index'
+import { TagModel } from 'types/index.types'
 
 export const metadata = genPageMetadata({ title: 'Tags', description: 'Things I blog about' })
 
 export default async function Page() {
-  const { data: tags } = await alovaInstance.Get(`https://nestjs.zsjs.fun/article-tag`, {
-    localCache: 1000,
-  })
+  const { data: tags } = await alovaInstance.Get<{ data: TagModel[] }>(
+    `https://nestjs.zsjs.fun/article-tag`,
+    {
+      localCache: 1000,
+    }
+  )
   return (
     <>
       <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
