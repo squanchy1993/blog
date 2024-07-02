@@ -6,6 +6,7 @@ import Pagination from './Pagination'
 import { ArticleModel } from 'types/index.types'
 
 type TableParams = { title?: string; tagId?: string; page?: string }
+export const revalidate = 0
 
 export default async function ArticleTable({ title, tagId, page = '1' }: TableParams) {
   const parmas = {
@@ -56,8 +57,8 @@ export default async function ArticleTable({ title, tagId, page = '1' }: TablePa
                     {item.tags?.map((tag) => <Tag data={tag} key={tag.id} />)}
                   </div>
                 </div>
-                <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                  {item.content}
+                <div className="prose max-w-none text-gray-500 dark:text-gray-400 line-clamp-4">
+                  {item.summary}
                 </div>
               </div>
             </article>
