@@ -57,7 +57,7 @@ export default async function ArticleTable({ title, tagId, page = '1' }: TablePa
                     {item.tags?.map((tag) => <Tag data={tag} key={tag.id} />)}
                   </div>
                 </div>
-                <div className="prose max-w-none text-gray-500 dark:text-gray-400 line-clamp-4">
+                <div className="prose line-clamp-4 max-w-none text-gray-500 dark:text-gray-400">
                   {item.summary}
                 </div>
               </div>
