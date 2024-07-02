@@ -6,7 +6,7 @@ import Pagination from './Pagination'
 import { ArticleModel } from 'types/index.types'
 
 type TableParams = { title?: string; tagId?: string; page?: string }
-export const revalidate = 0
+// export const revalidate = 0
 
 export default async function ArticleTable({ title, tagId, page = '1' }: TableParams) {
   const parmas = {

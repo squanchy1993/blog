@@ -11,7 +11,7 @@ import { PostArticleSkeleton } from './component/skeletons'
 const POSTS_PER_PAGE = 5
 
 export const metadata = genPageMetadata({ title: 'Blog' })
-export const revalidate = 0
+// export const revalidate = 0
 
 export default function BlogPage({
   searchParams,
