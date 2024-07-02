@@ -31,6 +31,7 @@ export default async function ArticleTable({ title, tagId, page = '1' }: TablePa
     {
       params: parmas,
       localCache: 1000,
+      next: { revalidate: 0 },
     }
   )
 
