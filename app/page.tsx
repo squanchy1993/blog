@@ -4,7 +4,7 @@ import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 import { alovaInstance } from 'http/index'
 import { ArticleModel } from 'types/index.types'
-import Tag from './blog/component/Tag'
+import ArticleTag from '@/components/ArticleTag'
 
 export default async function Page() {
   const {
@@ -60,7 +60,7 @@ export default async function Page() {
                             </Link>
                           </h2>
                           <div className="flex flex-wrap">
-                            {post.tags?.map((tag) => <Tag data={tag} key={tag.id} />)}
+                            {post.tags?.map((tag) => <ArticleTag data={tag} key={tag.id} />)}
                           </div>
                         </div>
                         <div className="prose max-w-none text-gray-500 dark:text-gray-400">

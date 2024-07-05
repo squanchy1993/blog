@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { TagModel } from 'types/index.types'
-const Tag = ({ data }: { data: TagModel }) => {
+const ArticleTag = ({ data }: { data: TagModel }) => {
   return (
     <Link
       href={`/blog?page=1&tagId=${data.id}`}
@@ -12,4 +12,4 @@ const Tag = ({ data }: { data: TagModel }) => {
   )
 }
 
-export default Tag
+export default ArticleTag

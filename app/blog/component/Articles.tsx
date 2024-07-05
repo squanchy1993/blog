@@ -1,6 +1,6 @@
 import { alovaInstance } from 'http/index'
 import Link from 'next/link'
-import Tag from './Tag'
+import ArticleTag from '@/components/ArticleTag'
 import { formatDate } from 'pliny/utils/formatDate'
 import Pagination from './Pagination'
 import { ArticleModel } from 'types/index.types'
@@ -55,7 +55,7 @@ export default async function ArticleTable({ title, tagId, page = '1' }: TablePa
                     </Link>
                   </h2>
                   <div className="flex flex-wrap">
-                    {item.tags?.map((tag) => <Tag data={tag} key={tag.id} />)}
+                    {item.tags?.map((tag) => <ArticleTag data={tag} key={tag.id} />)}
                   </div>
                 </div>
                 <div className="prose line-clamp-4 max-w-none text-gray-500 dark:text-gray-400">

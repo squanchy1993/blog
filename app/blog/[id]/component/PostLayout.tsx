@@ -3,7 +3,7 @@ import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import Image from '@/components/Image'
-import Tag from '@/components/Tag'
+import ArticleTag from '@/components/ArticleTag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { ArticleDetail } from 'types/index.types'
@@ -102,7 +102,7 @@ export default function PostLayout({ content, children }: LayoutProps) {
                     </h2>
                     <div className="flex flex-wrap">
                       {content.tags.map((tag) => (
-                        <Tag data={tag} key={tag.id} />
+                        <ArticleTag data={tag} key={tag.id} />
                       ))}
                     </div>
                   </div>

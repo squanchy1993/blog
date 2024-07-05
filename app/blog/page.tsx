@@ -1,11 +1,7 @@
-import ListLayout from './component/ListLayoutWithTags'
-import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
-import { allBlogs } from 'contentlayer/generated'
 import { genPageMetadata } from 'app/seo'
 import { Suspense } from 'react'
 import SideBar from './component/Sidebar'
 import ArticleTable from './component/Articles'
-import Pagination from './component/Pagination'
 import { PostArticleSkeleton } from './component/skeletons'
 
 const POSTS_PER_PAGE = 5
