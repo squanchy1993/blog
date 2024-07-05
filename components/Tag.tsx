@@ -1,16 +1,13 @@
 import Link from 'next/link'
-import { slug } from 'github-slugger'
-interface Props {
-  text: string
-}
 
-const Tag = ({ text }: Props) => {
+import { TagModel } from 'types/index.types'
+const Tag = ({ data }: { data: TagModel }) => {
   return (
     <Link
-      href={`/tags/${slug(text)}`}
+      href={`/blog?page=1&tagId=${data.id}`}
       className="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
     >
-      {text.split(' ').join('-')}
+      {data.name}
     </Link>
   )
 }
