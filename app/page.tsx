@@ -45,7 +45,7 @@ export default async function Page() {
                     <dl>
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={post.updatedAt}>{formatDate(post.updatedAt, 'en-US')}</time>
+                        <time dateTime={post.createdAt}>{formatDate(post.createdAt, 'en-US')}</time>
                       </dd>
                     </dl>
                     <div className="space-y-5 xl:col-span-3">
